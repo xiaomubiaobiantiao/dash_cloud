@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>登陆页面</title>
+    <style>
+        body {
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body >
+<!-- <fieldset> -->
+<table background="images\bg_img1.jpg " width="933" height="412">
+    <tr height="170">
+        <td width="570px"> </td>
+        <td> </td>
+    </tr> 
+    <tr>
+        <td> </td>        
+        <td>
+            <table>
+                <form method ="POST" action="http://localhost:8000/api/file/web/web_login_verify" name="frmLogin"  >
+                <tr>
+                    <td>用户名：</td>
+                    <td><input type="text" name="username" value="" size="20" maxlength="20" οnfοcus="if (this.value=='Your name')  this.value='';" /></td>
+                    <td > </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>密  码：</td>
+                    <td><input type="password" name="password" value="" size="20" maxlength="20" οnfοcus="if (this.value=='Your password')  this.value='';" /></td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+
+                <!-- 暂时注消验证码 -->
+                <!-- <tr>
+                    <td>验证码:</td>
+                    <td><input type="text" size="" name="inputcode" value="" οnfοcus="if (this.value=='Your code')  this.value='';" /></td>
+                    <td><img src="images\bg_img2.gif" alt="打不开网页"> </td>
+                    <td><a href="#" οnclick="shuaxin();">刷新</a></td>
+                </tr> -->
+
+                <!-- 暂时注消自动登录模块 -->
+                <!-- <tr>
+                    <td><input type="checkbox" name="zlogin" value="1">自动登录</td>
+                </tr> -->
+                
+            </table>
+        </td>
+    <tr>
+    <td> </td>   
+        <td>
+            <table>
+                <tr>
+                    <td><input type="submit" name="login" value="登录" onClick="return validateLogin()"/></td>
+                    <!-- <td><input type="reset" name="rs" value="重置"></td> -->
+                    <!-- <td><input type="button" name="button" value="注册" onClick="register();"></td> -->
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!-- </fieldset> -->
+</form>
+
+<script language="javascript">
+
+// 登陆
+function validateLogin(){
+
+    // 这边是用 js 的语法获的 input 输入框的值
+    var sUserName = document.frmLogin.username.value;
+    var sPassword = document.frmLogin.password.value;
+    var sinputCode =document.frmLogin.inputcode.value;
+
+    if ((sUserName =="") || (sUserName=="Your name")){
+        alert("请输入用户名!");
+        return false ;
+    }
+
+    if ((sPassword =="") || (sPassword=="Your password")){
+        alert("请输入密码!");
+        return false;
+    }
+    if ((sinputCode =="") || (sinputCode=="Your code")){
+        alert("请输入验证码!");
+        return false;
+    }
+}
+
+// 注册
+function register(){
+
+    // 定义输出的字符串
+    var message = 'message: this is a register';
+
+    // 测试是否有效的输出
+    alert(message);
+    console.log(message);
+
+    // 跳转到注册页面 - 估计用不上
+    location.href='http://www.baidu.com';
+}
+
+</script>
+</body>
+</html>
